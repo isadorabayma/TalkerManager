@@ -5,7 +5,7 @@ const router = express.Router();
 
 const DATAFILE = 'talker.json';
 
-const read = async (rec, res, next) => {
+const read = async (req, res, next) => {
     try {
         const data = await fs.readFile(DATAFILE);
         // const talkers = data.toString().split('\n');
