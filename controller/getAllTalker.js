@@ -1,7 +1,4 @@
 const fs = require('fs/promises');
-const express = require('express');
-
-const router = express.Router();
 
 const DATAFILE = 'talker.json';
 
@@ -18,10 +15,8 @@ const read = async (req, res, next) => {
 
         return res.status(200).send(talkers);
     } catch (e) {
-        next(e);
+        return next(e);
     }
 };
 
-router.get('/talker', read);
-
-module.exports = router;
+module.exports = read;

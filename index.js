@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const talkers = require('./controller/getAllTalker');
+const talkers = require('./Routers/talkerRoute');
 const talkerById = require('./controller/getTalkerById');
 
 const app = express();
@@ -13,7 +13,7 @@ const PORT = '3000';
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
-app.get('/talker', talkers);
+app.use('/talker', talkers);
 app.get('/talker/:id', talkerById);
 
 app.listen(PORT, () => {
