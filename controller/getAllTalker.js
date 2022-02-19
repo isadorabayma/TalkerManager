@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 
 const DATAFILE = 'talker.json';
 
-const read = async (req, res, next) => {
+const read = async (_req, res, next) => {
     try {
         const data = await fs.readFile(DATAFILE);
         // const talkers = data.toString().split('\n');

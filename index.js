@@ -14,6 +14,7 @@ const PORT = '3000';
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
+
 app.use('/talker', talkers);
 app.use('/login', login);
 
