@@ -4,12 +4,12 @@ const { v4: uuidv4 } = require('uuid');
 
 const tolken = uuidv4().split('-').join('').slice(0, 16);
 
-const create = (_req, res, next) => {
+const login = (_req, res, next) => {
     try {
-        return res.status(200).send({ token: tolken });
+        return res.status(200).json({ token: tolken });
     } catch (e) {
         next(e);
     }
 };
 
-module.exports = create;
+module.exports = login;
