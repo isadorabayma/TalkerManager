@@ -1,14 +1,13 @@
 const tokenVal = (req, res, next) => {
-    const { token } = req.header.Authorization;
-    console.log(token);
+    const token = req.headers.authorization;
 
     if (!token) {
         return res.status(401).json({ message: 'Token não encontrado' });
     }
 
-    // if (token = createTalken) {
-    //     return res.status(401).json({ message: 'Token inválido' })
-    // }
+    if (token.length !== 16) {
+        return res.status(401).json({ message: 'Token inválido' });
+    }
 
     next();
 };
