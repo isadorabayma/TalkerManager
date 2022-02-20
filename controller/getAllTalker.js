@@ -4,7 +4,7 @@ const DATAFILE = 'talker.json';
 
 const read = async (_req, res, next) => {
     try {
-        const data = await fs.readFile(DATAFILE);
+        const data = await fs.readFile(DATAFILE, 'utf8');
         // const talkers = data.toString().split('\n');
         // https://stackabuse.com/reading-and-writing-json-files-with-node-js/
         const talkers = JSON.parse(data);
