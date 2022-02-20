@@ -11,9 +11,11 @@ const talkVal = require('../Midwares/talkVal');
 const talkContentVal = require('../Midwares/talkContentVal');
 const createTalker = require('../controller/createTalker');
 
+const editTalker = require('../controller/editTalker');
+
 router.get('/', read);
 router.get('/:id', findById);
-// router.post('/', tokenVal, createTalker);
 router.post('/', tokenVal, nameVal, ageVal, talkVal, talkContentVal, createTalker);
+router.put('/:id', tokenVal, nameVal, ageVal, talkVal, talkContentVal, editTalker);
 
 module.exports = router;
