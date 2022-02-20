@@ -13,9 +13,12 @@ const createTalker = require('../controller/createTalker');
 
 const editTalker = require('../controller/editTalker');
 
+const deleteTalker = require('../controller/deleteTalker');
+
 router.get('/', read);
 router.get('/:id', findById);
 router.post('/', tokenVal, nameVal, ageVal, talkVal, talkContentVal, createTalker);
 router.put('/:id', tokenVal, nameVal, ageVal, talkVal, talkContentVal, editTalker);
+router.delete('/:id', tokenVal, deleteTalker);
 
 module.exports = router;
