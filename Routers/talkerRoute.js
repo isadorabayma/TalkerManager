@@ -7,11 +7,12 @@ const findById = require('../controller/getTalkerById');
 // const tokenVal = require('../Midwares/tokenVal');
 const nameVal = require('../Midwares/nameVal');
 const ageVal = require('../Midwares/ageVal');
+const talkVal = require('../Midwares/talkVal');
 const createTalker = require('../controller/createTalker');
 
 router.get('/', read);
 router.get('/:id', findById);
 // router.post('/', tokenVal, createTalker);
-router.post('/', nameVal, ageVal, createTalker);
+router.post('/', nameVal, ageVal, talkVal, createTalker);
 
 module.exports = router;
